@@ -1,0 +1,357 @@
+:root {
+    --bg-color: #f3f6fc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-sec: #64748b;
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --success-color: #10b981;
+    --success-light: #d1fae5;
+    --danger-color: #ef4444;
+    --danger-light: #fee2e2;
+    --border-color: #e2e8f0;
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+header h1 span {
+    color: var(--primary-color);
+}
+
+header p {
+    color: var(--text-sec);
+    font-size: 15px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.main-card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+/* Upload Section */
+.upload-section {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius);
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+    background-color: #f8fafc;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.upload-section.dragover {
+    border-color: var(--primary-color);
+    background-color: #eff6ff;
+}
+
+.upload-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.upload-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.upload-content p {
+    color: var(--text-sec);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.file-hint {
+    font-size: 12px !important;
+    margin-top: 15px;
+    margin-bottom: 0 !important;
+}
+
+/* Preview Section */
+#preview-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image-preview {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 8px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preview-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+#file-name {
+    font-size: 14px;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+}
+
+/* Buttons */
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.primary:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn.primary:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn.secondary {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn.secondary:hover {
+    background-color: var(--bg-color);
+}
+
+.icon-btn {
+    background: transparent;
+    color: var(--text-sec);
+    padding: 5px;
+    font-size: 16px;
+}
+
+.icon-btn:hover {
+    color: var(--danger-color);
+}
+
+/* Action Section */
+.action-section {
+    margin-bottom: 25px;
+}
+
+/* Results Section */
+.result-area {
+    border-top: 1px solid var(--border-color);
+    padding-top: 25px;
+    animation: fadeIn 0.5s ease;
+}
+
+.result-area h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.result-card {
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.result-card.success {
+    background-color: var(--success-light);
+    border-color: var(--success-color);
+}
+
+.result-card.danger {
+    background-color: var(--danger-light);
+    border-color: var(--danger-color);
+}
+
+.result-status {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.status-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.success .status-icon {
+    background-color: var(--success-color);
+}
+
+.success .status-icon::after {
+    content: "✓";
+}
+
+.danger .status-icon {
+    background-color: var(--danger-color);
+}
+
+.danger .status-icon::after {
+    content: "✕";
+}
+
+.result-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.success h3 {
+    color: #065f46;
+}
+
+.danger h3 {
+    color: #991b1b;
+}
+
+.confidence-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease-out;
+}
+
+.success .progress-fill {
+    background-color: var(--success-color);
+}
+
+.danger .progress-fill {
+    background-color: var(--danger-color);
+}
+
+/* Loader */
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    display: block; /* Override default hidden display if needed */
+}
+
+.loader.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+.error-toast {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+}
